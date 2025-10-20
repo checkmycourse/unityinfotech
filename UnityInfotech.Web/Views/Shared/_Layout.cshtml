@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - UnityInfotech Kochi</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-badge">U</div>
+                <div>
+                    <div style="font-weight:800">unityinfotech</div>
+                    <div style="font-size:12px;color:var(--muted)">kochi - Corporate Training Lab</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> unityinfotech kochi</div>
+            <div style="font-size:13px;color:var(--muted)">Built for corporate training labs • Designed for teams</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
